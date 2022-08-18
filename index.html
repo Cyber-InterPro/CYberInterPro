@@ -7,9 +7,7 @@
   </head>
 
   <body>
-    <p>Click the button to modify an existing PDF document with <code>pdf-lib</code></p>
-    <button onclick="modifyPdf()">Modify PDF</button>
-    <p class="small">(Your browser will download the resulting file)</p>
+    <button onclick="modifyPdf()">Teste</button>
   </body>
 
   <script>
@@ -17,21 +15,25 @@
 
     async function modifyPdf() {
         
-        //Colocar os dados nas variáveis
-        var nome = 'Danilo';
-        var ultimoNome = 'Pedrazzi';
-        var cpf = '81902890142';
-        var contratante = 'Anderson';
+      //Colocar os dados nas variáveis
+      var nome = 'HUDSON';            /* ESPERANDO FRONTEND */
+      var nomeMeio = 'CARVALHO DE';    /* ESPERANDO FRONTEND */
+      var ultimoNome = 'CAMARGO';    /* ESPERANDO FRONTEND */
+      var cpf = '30720402030';        /* ESPERANDO FRONTEND */
+
+      //posição do texto
+      //0 = inferior direito 1= superior direito 2= superior esquerdo 3= inferior esquerdo
+      var posicao = 1;                /* ESPERANDO FRONTEND */
 
       // Url do Pdf
-        const url = 'https://pdf-lib.js.org/assets/with_update_sections.pdf'
-  	    const existingPdfBytes = await fetch(url).then(res => res.arrayBuffer())
+      const url = 'https://pdf-lib.js.org/assets/with_update_sections.pdf' /* ESPERANDO FRONTEND */
+  	  const existingPdfBytes = await fetch(url).then(res => res.arrayBuffer())
 
       // Carregar o pdf
-        const pdfDoc = await PDFDocument.load(existingPdfBytes)
+      const pdfDoc = await PDFDocument.load(existingPdfBytes)
 
       // Carregar a fonte
-        const helveticaFont = await pdfDoc.embedFont(StandardFonts.Helvetica)
+      const helveticaFont = await pdfDoc.embedFont(StandardFonts.Helvetica)
 
       // Carregar as páginas
       const pages = pdfDoc.getPages()
@@ -40,49 +42,89 @@
       // Carregar o tamanho do PDF
       const { width, height } = firstPage.getSize()
 
-      // Parte a ser modificada
-      firstPage.drawText(nome.toString(), {
-        x:  500,
-        y:  50,
-        size: 10,
-        font: helveticaFont,
-        color: rgb(0, 0, 0),
-      })
-      firstPage.drawText(ultimoNome.toString(), {
-        x:  500,
-        y:  40,
-        size: 10,
-        font: helveticaFont,
-        color: rgb(0, 0, 0),
-      })
-      firstPage.drawText(cpf.toString(), {
-        x:  500,
-        y:  30,
-        size: 10,
-        font: helveticaFont,
-        color: rgb(0, 0, 0),
-      })
-      firstPage.drawText('-------------------', {
-        x:  500,
-        y:  25,
-        size: 10,   
-        font: helveticaFont,
-        color: rgb(0, 0, 0),
-      })
-      firstPage.drawText(contratante.toString(), {
-        x:  500,
-        y:  20,
-        size: 10,
-        font: helveticaFont,
-        color: rgb(0, 0, 0),
-      })
+      //Posição do texto
+      switch (posicao) {
+        case 0:
+          Assinatura(400, 50);
+          break;
+        case 1:
+          Assinatura(400, 750);
+          break;
+        case 2:
+          Assinatura(50, 750);
+          break;
+        case 3:
+          Assinatura(50, 50);
+          break;
+      }
 
       // Salvar o PDF
       const pdfBytes = await pdfDoc.save()
 
-	  // Nome do PDF
-	  // Baixar o PDF
-      download(pdfBytes, "hamburguer.pdf", "application/pdf");
+	    // Nome do PDF
+      download(pdfBytes, "Documento Assinado.pdf", "application/pdf");
+
+
+      //Função para fazer a Assinatura
+      function Assinatura(x, y){
+        firstPage.drawText(nome, {
+          x:  x,
+          y:  y,
+          size: 10,
+          font: helveticaFont,
+          color: rgb(0, 0, 0),
+        })
+        firstPage.drawText(`${nomeMeio}`, {
+          x:  x,
+          y:  y - 10,
+          size: 10,
+          font: helveticaFont,
+          color: rgb(0, 0, 0),
+        })
+        firstPage.drawText(`${ultimoNome}:`, {
+          x:  x,
+          y:  y - 20,
+          size: 10,
+          font: helveticaFont,
+          color: rgb(0, 0, 0),
+        })
+        firstPage.drawText(cpf, {
+          x:  x,
+          y:  y - 30,
+          size: 10,
+          font: helveticaFont,
+          color: rgb(0, 0, 0),
+        })
+        firstPage.drawText('Assinado de forma digital por', {
+          x:  x + 75,
+          y:  y,
+          size: 6,
+          font: helveticaFont,
+          color: rgb(0, 0, 0),
+        })
+        firstPage.drawText(`${nome}${nomeMeio}`, {
+          x:  x + 75,
+          y:  y - 10,
+          size: 6,
+          font: helveticaFont,
+          color: rgb(0, 0, 0),
+        })
+        firstPage.drawText(`${ultimoNome}:${cpf}`, {
+          x:  x + 75,
+          y:  y - 20,
+          size: 6,
+          font: helveticaFont,
+          color: rgb(0, 0, 0),
+        })
+        let now = new Date();
+        firstPage.drawText(`Dados: ${now.toLocaleDateString()} ${now.toLocaleTimeString()}`, {
+          x:  x + 75,
+          y:  y - 30,
+          size: 6,
+          font: helveticaFont,
+          color: rgb(0, 0, 0),
+        })
+      }
     }
   </script>
 </html>
