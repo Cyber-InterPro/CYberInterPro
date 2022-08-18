@@ -1,0 +1,88 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <script src="https://unpkg.com/pdf-lib@1.4.0"></script>
+    <script src="https://unpkg.com/downloadjs@1.4.7"></script>
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+    <p>Click the button to modify an existing PDF document with <code>pdf-lib</code></p>
+    <button onclick="modifyPdf()">Modify PDF</button>
+    <p class="small">(Your browser will download the resulting file)</p>
+  </body>
+
+  <script>
+    const { degrees, PDFDocument, rgb, StandardFonts } = PDFLib
+
+    async function modifyPdf() {
+        
+        //Colocar os dados nas variáveis
+        var nome = 'Danilo';
+        var ultimoNome = 'Pedrazzi';
+        var cpf = '81902890142';
+        var contratante = 'Anderson';
+
+      // Url do Pdf
+        const url = 'https://pdf-lib.js.org/assets/with_update_sections.pdf'
+  	    const existingPdfBytes = await fetch(url).then(res => res.arrayBuffer())
+
+      // Carregar o pdf
+        const pdfDoc = await PDFDocument.load(existingPdfBytes)
+
+      // Carregar a fonte
+        const helveticaFont = await pdfDoc.embedFont(StandardFonts.Helvetica)
+
+      // Carregar as páginas
+      const pages = pdfDoc.getPages()
+      const firstPage = pages[0]
+
+      // Carregar o tamanho do PDF
+      const { width, height } = firstPage.getSize()
+
+      // Parte a ser modificada
+      firstPage.drawText(nome.toString(), {
+        x:  500,
+        y:  50,
+        size: 10,
+        font: helveticaFont,
+        color: rgb(0, 0, 0),
+      })
+      firstPage.drawText(ultimoNome.toString(), {
+        x:  500,
+        y:  40,
+        size: 10,
+        font: helveticaFont,
+        color: rgb(0, 0, 0),
+      })
+      firstPage.drawText(cpf.toString(), {
+        x:  500,
+        y:  30,
+        size: 10,
+        font: helveticaFont,
+        color: rgb(0, 0, 0),
+      })
+      firstPage.drawText('-------------------', {
+        x:  500,
+        y:  25,
+        size: 10,   
+        font: helveticaFont,
+        color: rgb(0, 0, 0),
+      })
+      firstPage.drawText(contratante.toString(), {
+        x:  500,
+        y:  20,
+        size: 10,
+        font: helveticaFont,
+        color: rgb(0, 0, 0),
+      })
+
+      // Salvar o PDF
+      const pdfBytes = await pdfDoc.save()
+
+	  // Nome do PDF
+	  // Baixar o PDF
+      download(pdfBytes, "hamburguer.pdf", "application/pdf");
+    }
+  </script>
+</html>
