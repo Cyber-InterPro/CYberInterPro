@@ -3,11 +3,11 @@ import fs from "node:fs";
 import path from "node:path";
 
 async function main() {
-  const originalPdfName = "vazio";       //VEM DO FRONT
+  const originalPdfName = "Array";       //VEM DO FRONT
   const certificateName = "keystore";    //VEM DO FRONT
 
   const pdfBuffer = new SignPDF(
-    path.resolve('assets/' + originalPdfName + '.pdf'),
+    path.resolve('assets/' + originalPdfName),
     path.resolve('assets/' + certificateName + '.p12')
   );
 

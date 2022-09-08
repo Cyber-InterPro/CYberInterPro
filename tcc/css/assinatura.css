@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap');
+body, html{
+    font-family: 'Raleway', sans-serif;
+    
+}
+body{
+    width: 100%;
+    height: auto;
+    background-color: var(--branco);
+}
+.titulo{
+    color:black;
+    text-align: center;
+}
+.row-as{
+    text-align: center;
+}
+
+.pdf_text{
+    color:rgb(190, 186, 186);
+    text-align: left;
+    margin-top:-10px;
+    font-size:18px;
+}
+
+#the-canvas{
+    border: 1px solid black;
+    direction: 1lr;
+}
+.but_pdf{
+    margin-top: -10px;
+}
+
+.pdf{
+    background-color: blue;
+}
+.pdf_viewer{
+    border-radius:10px;
+}
