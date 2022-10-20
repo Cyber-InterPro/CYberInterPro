@@ -9,7 +9,6 @@ body{
     background-color: var(--branco);
 }
 .titulo{
-    color:black;
     text-align: center;
 }
 .row-as{
@@ -36,4 +35,8 @@ body{
 }
 .pdf_viewer{
     border-radius:10px;
+}
+#etapas{
+    margin-top: 4rem;
+    margin-bottom: 7rem;
 }

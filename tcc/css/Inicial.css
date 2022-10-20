@@ -44,12 +44,18 @@ p{
 
 
 .entrar{
-    background-image: linear-gradient(to right, var(--azul_escuro_dg_claro), var(--azul_claro_dg_claro));
+    background-image: linear-gradient(to bottom, var(--azul_escuro_dg_claro), var(--azul_claro_dg_claro));
     color: rgb(255, 255, 255);
     border: 0;
     box-shadow: inset 2px 2px 6px hsla(0, 0%, 18%, 0.815);
     transition: filter .3s;
     transition: transform .3s;
+}
+
+.entrar_text{
+    background-color: var(--azul_claro_dg_escuro);
+    color: #fff;
+    border:0;
 }
 #btn_menu{
     width: 7em;

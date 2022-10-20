@@ -13,10 +13,17 @@
 
     --cinza_claro: #F2EFEF; /*- menu*/
     --cinza_escuro: #B9B7B7; /*- frases detalhes*/
+    --cinza_escurom: rgb(77, 77, 77);
     --cinza_medio: #CBCBCB; /*- linhas divisão*/
 
     --preto: #000;
     --branco: #fff;
     --salmao: #E85952;
     --gradiente:linear-gradient(#0F6191, #75B9E1);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap');
+body, html{
+    font-family: 'Raleway', sans-serif;
+    
 }

@@ -32,9 +32,81 @@ DROP TABLE IF EXISTS `tbcertificado`;
 CREATE TABLE IF NOT EXISTS `tbcertificado` (
   `padrao` varchar(20) NOT NULL,
   `nome` varchar(100) NOT NULL,
-  `cpf` char(9) NOT NULL,
-  `cnpj` char(14) NOT NULL,
+  `cpf` char(9),
+  `cnpj` char(14),
   `senha` varchar(45) NOT NULL,
+  `data_emissao` date,
+  `data_validade` date,
+  PRIMARY KEY (`cpf`,`cnpj`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `tbusuario`
+--
+
+DROP TABLE IF EXISTS `tbusuario`;
+CREATE TABLE IF NOT EXISTS `tbusuario` (
+  `userid` int Auto_increment primary key not null,	
+  `usuario` varchar(45) NOT NULL,
+  `email` varchar(60) NOT NULL,
+  `telefone` varchar(11) NOT NULL,
+  `senha` varchar(45) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `tbusuario`
+--
+
+INSERT INTO `tbusuario` (`usuario`, `email`, `telefone`, `senha`) VALUES
+('uyhgytgty', 'hghghgh@gamil.com', '71487', '60131cf1fb645ce65a6c1f6f60b6e875'),
+('s ugfyukgtf', 'gdjusfyugtsd@gmail.com', '65.2982', '38054ae419be9e8290323bf41b89739a'),
+('nic', 'nic@gmail.com', '6546735', 'gfeg$5jhjh');
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+-- phpMyAdmin SQL Dump
+-- version 5.1.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1:3306
+-- Tempo de geração: 18-Ago-2022 às 14:53
+-- Versão do servidor: 5.7.36
+-- versão do PHP: 7.4.26
+create database cyberinterpro;
+use cyberinterpro;
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Banco de dados: `cyberinterpro`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `tbcertificado`
+--
+
+DROP TABLE IF EXISTS `tbcertificado`;
+CREATE TABLE IF NOT EXISTS `tbcertificado` (
+  `padrao` varchar(20) NOT NULL,
+  `nome` varchar(100) NOT NULL,
+  `cpf` char(9),
+  `cnpj` char(14),
+  `senha` varchar(45) NOT NULL,
+  `data_emissao` date,
+  `data_validade` date,
   PRIMARY KEY (`cpf`,`cnpj`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 

@@ -1,5 +1,5 @@
 <?php
-$_UP['pasta'] = '../assets/';
+$_UP['pasta'] = 'pdf/';
 $_UP['extensoes'] = array('pdf');
 $_UP['renomeia'] = false;
 

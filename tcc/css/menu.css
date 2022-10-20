@@ -1,19 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap');
-body, html{
-    font-family: 'Raleway', sans-serif;
-}
-body{
-    width: 100%;
-    height: auto;
-    /* background-image: linear-gradient(var(--azul_claro_dg_escuro), var(--azul_escuro_dg_escuro), var(--azul_escuro_dg_escuro), var(--azul_claro_dg_escuro)); */
-    background-size: contain; /*cover*/
-    background-repeat: no-repeat;
-}
+
 /*MENU - NAVBAR*/
 #header{
     width: 100%;
     background-color: var(--cinza_claro);
-    transition: background ease-out .2s;
 }
 #header .navbar-collapse{
     width: auto;
@@ -69,6 +58,7 @@ p{
     font-size: 1.1rem;
 }
 
+
 .menu-perf-text{
     font-size: 0.8rem;
 }
@@ -86,7 +76,13 @@ p{
 #header .dropdown-item{
     border-radius:-0px;
     margin-bottom: 0.5rem;
+    color: white;
 }
+#header .dropdown-item:hover{
+    color: black;
+    font-weight: bold;
+}
+
 #header .usuario{
     height: 5rem;
 }
@@ -110,8 +106,14 @@ p{
     font-size: 0.8rem;
     margin-top: -1rem;
 }
-
-
+.gerenc-perfil{
+    text-decoration: none;
+    color: black;
+}
+.gerenc-perfil:hover{
+    color:#fff  
+    
+}
 .foto_usu{
     margin-left:1rem;
 }
@@ -126,7 +128,9 @@ p{
     margin-top: -0.19rem;
     margin-right:0.5rem;
 }
+#perfil{
 
+}
 
 /*.entrar{
     background-image: linear-gradient(to right, var(--azul_escuro_dg_claro), var(--azul_claro_dg_claro));

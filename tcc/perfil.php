@@ -18,14 +18,21 @@
     </section>
     <section id="sec_alt_senha">
         <div class="container text-center">
-            <form id="form_alt_senha">
+            <form id="form_alt_senha" action="alterar_senha.php" method="post">
                 <div id="formulario">
                     <p class="mt-4" id="tit_alt_senha">Alterar Senha</p>
                     <div class="input-group flex-nowrap inputs m-4" data-bs-toggle="tooltip" data-bs-title="Sua senha deve conter 8-20 caracteres, letras, números e caracteres especiais." data-bs-trigger="focus" >
                         <div  class="align-self-center ms-3 me-3">
                             <img src="assets/cadeado_cinza.png" alt="" srcset="">
                         </div>
-                        <input type="password" class="form-control insert" id="confsenha"  placeholder="Senha Atual" aria-label="Username" aria-describedby="addon-wrapping"required>
+                        <input type="text" class="form-control insert" id="email" name="email"  placeholder="Email da conta" aria-label="Username" aria-describedby="addon-wrapping"required>
+                    </div>
+
+                    <div class="input-group flex-nowrap inputs m-4" data-bs-toggle="tooltip" data-bs-title="Sua senha deve conter 8-20 caracteres, letras, números e caracteres especiais." data-bs-trigger="focus" >
+                        <div  class="align-self-center ms-3 me-3">
+                            <img src="assets/cadeado_cinza.png" alt="" srcset="">
+                        </div>
+                        <input type="password" class="form-control insert" id="confsenha" name="senhaa"  placeholder="Senha Atual" aria-label="Username" aria-describedby="addon-wrapping"required>
                         <div class="align-self-center ms-3 me-3" >
                             <img src="assets/olho_cinza.png" onclick="MostrarOcultarConfSenha()" alt="" srcset="">
                         </div>
@@ -35,7 +42,7 @@
                         <div class="align-self-center ms-3 me-3">
                             <img src="assets/cadeado_cinza.png" alt="" srcset="">
                         </div>
-                        <input onkeyup="trigger()" onfocusout="FocusOut()" type="password" class="form-control insert" id="senha"  placeholder="Senha Nova" aria-label="Username" aria-describedby="addon-wrapping" required>
+                        <input onkeyup="trigger()" onfocusout="FocusOut()" type="password" name="senhan" class="form-control insert" id="senha"  placeholder="Senha Nova" aria-label="Username" aria-describedby="addon-wrapping" required>
                         <div class="align-self-center ms-3 me-3 " >
                             <img src="assets/olho_cinza.png" onclick="MostrarOcultarSenha()" alt="" srcset="">
                         </div>
