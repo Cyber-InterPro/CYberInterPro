@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -5,9 +6,15 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<!--link rel="stylesheet" href="css/style.css" /-->
 		<meta charset="utf-8">
+		<link rel="stylesheet" href="../front/css/main1.css">
+    	<link rel="stylesheet" href="css/request.css">
+    	<link rel="stylesheet" href="../front/css/menu.css">
+		<link rel="stylesheet" href="../front/css/footer.css">
+
+		<script src="../front/js/certificado.js"></script>
 	</head>
-	<body>
-	<?php
+	<body onload="Step3()">
+		<?php
 			if(isset($_GET['nome']))
 			{
 				$name=$_GET['nome'];
@@ -37,7 +44,9 @@
 			// echo "<a href='http://localhost/cyberinterpro/aws/crl/cyberinterproonline.crl'>LCR</a>";
 			// echo "&nbsp;&nbsp;&nbsp;";
 			// echo "<a href='http://localhost/cyberinterpro/aws/chain/CyberInterProChain.p7b'>Cadeia</a>";
+
+			include ("../front/request_api.php");
 			
-	?>
+		?>
 	</body>
 </html>

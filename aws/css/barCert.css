@@ -43,6 +43,7 @@ body{
     counter-reset: step;
     margin: 3rem 4rem 4rem;
 }
+
 .progressbar::before, .progress{
     content: "";
     position: absolute;
@@ -89,10 +90,4 @@ body{
     color: var(--azul_claro_dg_escuro);
     font-weight: bolder;
     transition: all 0.5s linear;
-}
-.notransition{
-    background-color: var(--azul_claro_dg_escuro);
-    background-size: 200%;
-    color: var(--azul_claro_dg_escuro);
-    font-weight: bolder;
 }

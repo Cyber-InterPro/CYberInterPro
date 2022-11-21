@@ -22,7 +22,7 @@ body{
 
 #atividades{
     width: 100%;
-    height: auto;
+    min-height: 35em;
     color: white;
     padding: 30px 30px;
     border-radius: 10px;

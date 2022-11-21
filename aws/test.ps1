@@ -31,7 +31,7 @@ $body = "{
 `n    `"extraInfo`" : `"`"
 `n}"
 
-$filename = $name+'_'+$cpf+'.pfx'
+$filename = $name+'_'+$cpf+'.p12'
 $response = Invoke-RestMethod 'https://ec2-54-175-132-165.compute-1.amazonaws.com/certdog/api/certs/request' -Method 'POST' -Headers $headers -Body $body
 $response | ConvertTo-Json
-$response.p12Data | Out-File -FilePath "C:\wamp64\www\cyberinterpro\aws\files\$filename"
+$response.p12Data | Out-File -FilePath "C:\wamp642\www\cyberinterpro\aws\files\$filename"
