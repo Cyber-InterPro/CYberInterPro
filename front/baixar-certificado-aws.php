@@ -1,46 +1,48 @@
 <?php
-    include('verificar-login.php');
+include('verificar-login.php');
+include('conectbd.php');
 ?>
- <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/assinatura.css">
-    <link rel="stylesheet" href="css/main1.css">    
-    <link rel="stylesheet" href="css/menu.css">
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
-    <script src="JS/bootstrap.min.js"></script>
-    <script src="pdf/mostrarpdf.js"></script>
-    <script src="pdf/pdf.js"></script>
-    <title> Baixar Certificado </title>
-    <script src="https://unpkg.com/pdf-lib@1.4.0"></script>
-    <script src="https://unpkg.com/downloadjs@1.4.7"></script>
-</head>
-<body>
-    <?php
-        include "menu.php";
-        $filename=$_GET['filename'];
-    ?>
-    <section class="mb-5">
-        <div class="mt-5">
-            <h1 class="titulo">Geração de Certificado</h1>
-            <?php
-                include "ProgressBarCert.html";
 
-            ?>
-        </div> 
-        <div class="container text-center">
-            <div class="col-md-12 col-sm-12 align-self-center" id="esc-arquivo">
-                <a class="but_pdf btn btn-primary" href="http://localhost/cyberinterpro/aws/files/Joao Silva Neves_12345678.pfx">Aqui está seu arquivo!</a>
-                <br><br><br><br><br>
-            </div>
-        </div>
-    </section>
-        <?php   
-        include "footer.html";
-        ?>
-<script src="js/assinaturaImg.js"></script>
-</body>
-</html>
+<head>
+	<title>CyberInterPro API Test</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<!--link rel="stylesheet" href="css/style.css" /-->
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="css/main1.css">
+	<link rel="stylesheet" href="css/request.css">
+	<link rel="stylesheet" href="css/menu.css">
+	<link rel="stylesheet" href="css/footer.css">
+
+	<script src="js/certificado.js"></script>
+</head>
+
+<body onload="Step3()">
+
+	<?php
+	include "menu.php";
+	?>
+	<section>
+		<div class="mt-5 text-center justify-content-center">
+			<h1 class="titulo">Geração de Certificado</h1>
+			<?php
+			include "ProgressBarRequest.html";
+			?>
+		</div>
+	</section>
+	<section>
+		<div id="container" class="d-flex text-center justify-content-center align-items-center">
+			<div id="centralizar">
+				<p class="" id="frase1">Seu Certificado Digital foi gerado com <span>sucesso!</span></p>
+				<p class="" id="frase2">Clique abaixo e faça o download do certificado e da cadeia.</p>
+				<?php
+				echo "<a href='http://localhost/cyberinterpro/aws/files/Joao Silva Neves_12345678.pfx' class='btn btn-primary rounded-pill entrar_text  d-md-inline-block d-flex flex-sm-column btn_land mt-md-3 mb-md-0 mb-2 me-md-5' id='btn_down'>Certificado</a>";
+				echo "<a href='http://localhost/cyberinterpro/aws/chain/CyberInterProChain.p7b ' class='btn btn-primary rounded-pill entrar_text  d-md-inline-block d-flex flex-sm-column btn_land mt-md-3 mb-md-0 mb-2 me-md-5' id='btn_down'>Cadeia</a>";
+				?>
+			</div>
+		</div>
+	</section>
+	<?php
+	include('footer.html');
+
+	?>
