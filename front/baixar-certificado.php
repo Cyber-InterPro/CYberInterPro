@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/assinatura.css">
     <link rel="stylesheet" href="css/main1.css">    
     <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="../aws/css/request.css">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
     <script src="JS/bootstrap.min.js"></script>
     <script src="pdf/mostrarpdf.js"></script>
@@ -23,26 +24,29 @@
         include "conectbd.php";
         include "menu.php";
         ?>
-    <section id="assinatura">
-        <div class="container pt-md-0 pt-5 pb-0" >
-            <div class="row-as mt-3">
-                <div class="col-md-12 col-sm-12 align-self-center" id="titulo">
-                    <h1 class="titulo">Assinatura de Arquivos</h1>
-                </div>
-                <div class="col-md-12 col-sm-12 align-self-center" id="etapas">
-                    <?php
-                        include "ProgressBarAssina.html";
-                        ?>
-                </div>
-                <div class="col-md-12 col-sm-12 align-self-center" id="esc-arquivo">
-                    <a href="exports/pdfAssinado.pdf" class='btn btn-primary rounded-pill entrar_text  d-md-inline-block d-flex flex-sm-column btn_land mb-md-0 mb-2 me-md-2' target="_blank">Aqui está seu arquivo!</a>
-                    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> <!-- FRONTEND ARRUME! !-->
+    <section id="assinatura" >
+        <div class="mt-5 text-center justify-content-center">
+            <h1 class="titulo">Assinatura de Arquivos</h1>
+            <?php
+                include "ProgressBarAssina.html";
+
+            ?>
+        </div>
+    </section>
+    <section>
+        <div id="container" class="d-flex text-center justify-content-center align-items-center">
+            <div id="centralizar"  >	
+                <p class="" id="frase1">Seu arquivo foi assinado com <span>sucesso!</span></p>
+                <p class="" id="frase2">Clique abaixo e faça o download do arquivo assinado.</p>
+                <div id="esc-arquivo">
+                    <a href="exports/pdfAssinado.pdf" class='btn btn-primary rounded-pill entrar_text  d-md-inline-block d-flex flex-sm-column btn_land mt-md-3 mb-md-0 mb-2' id='btn_down_assi' target="_blank">Aqui está seu arquivo!</a>
                 </div>
             </div>
-        </section>
-        <?php   
+        </div>
+    </section>
+    <?php   
         include "footer.html";
-        ?>
+    ?>
 <script src="js/assinatura.js"></script>
 </body>
 </html>

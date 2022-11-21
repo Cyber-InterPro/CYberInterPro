@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -35,7 +36,7 @@
 			}
 		
 			// echo "<pre>";
-			$response = Shell_Exec('powershell -InputFormat none -ExecutionPolicy ByPass -NoProfile -Command "& { . \"C:\wamp642\www\cyberinterpro\aws\test.ps1\"; }"');
+			$response = Shell_Exec('powershell -InputFormat none -ExecutionPolicy ByPass -NoProfile -Command "& { . \"C:\xampp\htdocs\cyberinterpro\aws\test.ps1\"; }"');
 			// echo $response;
 			// echo "</pre>";
 			
@@ -46,7 +47,7 @@
 			// echo "&nbsp;&nbsp;&nbsp;";
 			// echo "<a href='http://localhost/cyberinterpro/aws/chain/CyberInterProChain.p7b'>Cadeia</a>";
 
-			include "../front/request_api.php"
+			include ("../front/request_api.php");
 			
 		?>
 	</body>

@@ -24,28 +24,28 @@
         include "menu.php";
         ?>
     <section id="assinatura">
-        <div class="container pt-md-0 pt-5 pb-0" >
-            <div class="row-as mt-3">
-                <div class="col-md-12 col-sm-12 align-self-center" id="titulo">
-                    <h1 class="titulo">Assinatura de Arquivos</h1>
+        <div class="mt-5 text-center justify-content-center">
+            <h1 class="titulo">Assinatura de Arquivos</h1>
+            <?php
+                include "ProgressBarAssina.html";
+
+            ?>
+        </div>
+    </section>
+    <section>
+        <div id="container" class="container text-center align-self-center" id="esc-arquivo">
+            <form action="certificado-applyer.php" method="post" enctype="multipart/form-data">
+                <input type="file" class="form-control mb-3 pdf" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" accept=".p12" name="userfile">
+                <h5 class="pdf_text ms-2"> Escolha somente arquivos com extensão .p12 </h5>
+                <!-- <input type="submit" value="Assinar Documento" name="submit" class="but_pdf btn btn-primary">  -->
+                <div class="mt-4 container text-center align-self-center" id="prox ">
+                    <button class="btn " id="btn_primario" type="submit">Assinar Documento</button>
                 </div>
-                <div class="col-md-12 col-sm-12 align-self-center" id="etapas">
-                    <?php
-                        include "ProgressBarAssina.html";
-                        ?>
-                </div>
-                <div class="col-md-12 col-sm-12 align-self-center" id="esc-arquivo">
-                    <form action="certificado-applyer.php" method="post" enctype="multipart/form-data">
-                        <input type="file" class="form-control mb-3 pdf" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" accept=".p12" name="userfile">
-                        <h5 class="pdf_text ms-2"> Escolha somente arquivos com extensão .p12 </h5>
-                        <input type="submit" value="Assinar Documento" name="submit" class="but_pdf btn btn-primary"> 
-                        <br><br><br><br><br><br><br><br><br><br><br><br>
-                    </form>
-                </div>
-            </div>
-        </section>
+            </form>
+        </div>
+    </section>
         <?php   
-        include "footer.html";
+            include "footer.html";
         ?>
 <script src="js/assinatura.js"></script>
 </body>

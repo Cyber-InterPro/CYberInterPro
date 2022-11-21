@@ -3,14 +3,7 @@ body, html{
     font-family: 'Raleway', sans-serif;
     
 }
-body{
-    width: 100%;
-    height: auto;
-    background-color: var(--branco);
-}
-.titulo{
-    text-align: center;
-}
+
 .row-as{
     text-align: center;
 }
@@ -36,7 +29,50 @@ body{
 .pdf_viewer{
     border-radius:10px;
 }
-#etapas{
-    margin-top: 4rem;
-    margin-bottom: 7rem;
+#btn_primario{
+    background-color: var(--azul_escuro_dg_claro);
+    border: var(--azul_escuro_dg_claro);
+    border-radius: 25px;
+    width: 11em;
+    height: 2.5em;
+    transition: transform .6s;
+    margin-bottom: 3em;
+    color: white;
+}
+#btn_primario:hover{
+    transform: scale(1.05); 
+}
+
+#prox a:link {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+  }
+  
+
+#prox a:visited {
+    color: rgb(255, 255, 255);
+  }
+  
+
+#prox a:hover {
+    color: rgb(255, 255, 255);
+    
+  }
+  
+  /* selected link */
+#prox a:active {
+    color: rgb(255, 255, 255);
+  }
+  /* #container{
+    background-color: brown;
+  } */
+  /* #btn_insert_assi{
+    width: 14em;
+    font-size: 1.2em;
+    background-color: var(--azul_escuro_dg_claro);
+    transition: transform .6s;
+    border: 0;
+} */
+#container{
+    margin-bottom: 15em;
 }

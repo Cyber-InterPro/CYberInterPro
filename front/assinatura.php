@@ -22,33 +22,38 @@
 <body onload="Progresso1()">
     <?php
         include "menu.php";
-        ?>
-    <section id="assinatura">
-        <div class="container pt-md-0 pt-5 pb-0" >
-            <div class="row-as mt-3">
-                <div class="col-md-12 col-sm-12 align-self-center" id="titulo">
-                    <h1 class="titulo">Assinatura de Arquivos</h1>
+    ?>
+    <section id="assinatura" class="mb-5">
+        <div class="mt-5  text-center justify-content-center">
+            <h1 class="titulo ">Assinatura de Arquivos</h1>
+            <?php
+                include "ProgressBarAssina.html";
+
+            ?>
+        </div>
+    </section>
+    <section>
+        <div class="container text-center align-self-center" id="esc-arquivo">
+            <form action="test.php" method="post" enctype="multipart/form-data">
+                <input type="file" class="form-control mb-3 pdf" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" accept=".pdf" name="pdf">
+                <h5 class="pdf_text ms-2"> Escolha somente arquivos com extensão .pdf </h5>
+                <!-- <input type="submit" value="Validar PDF"  name="submit" class="but_pdf btn" >  -->
+                <div class="mt-4 container text-center align-self-center" id="prox">
+                    <button class="btn" id="btn_primario" type="submit">Validar</button>
                 </div>
-                <div class="col-md-12 col-sm-12 align-self-center" id="etapas">
-                    <?php
-                        include "ProgressBarAssina.html";
-                        ?>
-                </div>
-                <div class="col-md-12 col-sm-12 align-self-center" id="esc-arquivo">
-                    <form action="test.php" method="post" enctype="multipart/form-data">
-                        <input type="file" class="form-control mb-3 pdf" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" accept=".pdf" name="pdf">
-                        <h5 class="pdf_text ms-2"> Escolha somente arquivos com extensão .pdf </h5>
-                        <input type="submit" value="Validar PDF" name="submit" class="but_pdf btn btn-primary"> 
-                    </form>
-                </div>
-                <div class="col-md-12 col-sm-12 align-self-center mt-2 mb-5">
-                    <iframe src="pdf/Array" width="100%" height="700" class="pdf_viewer">
-                        </iframe>
-                    </div>
-                    <a href="inserir-certificado.php">Próximo</a>
-                </div>
-            </div>
-        </section>
+            </form>
+        </div>
+        <div class="container text-center align-self-center mt-2 mb-5">
+            <iframe src="pdf/Array" width="100%" height="700" class="pdf_viewer">
+            </iframe>
+        </div>
+    </section>
+        <!-- <div id="prox" class="container text-center align-self-center">
+        <a href="inserir-certificado.php">Próximo</a>
+    </div> -->
+    <div class="container text-center align-self-center" id="prox">
+        <button class="btn" id="btn_primario"><a href="inserir-certificado.php">Próximo</a></button>
+    </div>
         <?php   
         include "footer.html";
         ?>

@@ -1,10 +1,17 @@
 <?php
-include('verificar-login.php');
-include('conectbd.php');
-include ('menu.php');
-include ('ProgressBarRequest.html');
+	include('verificar-login.php');
+	include('conectbd.php');
+	include "menu.php";
 ?>
+<section>
+        <div class="mt-5 text-center justify-content-center">
+            <h1 class="titulo">Geração de Certificado</h1>
+            <?php
+                include "ProgressBarRequest.html";
 
+            ?>
+        </div>
+    </section>
 <section>
 		<div id="container" class="d-flex text-center justify-content-center align-items-center">
 			<div id="centralizar"  >	
@@ -17,3 +24,7 @@ include ('ProgressBarRequest.html');
 				</div>
 		</div>
 </section>
+<?php
+	include ('footer.html');
+
+?>
