@@ -24,7 +24,6 @@
         include "conectbd.php";
         include "menu.php";
         ?>
-<<<<<<< HEAD
     <section id="assinatura">
         <div class="container pt-md-0 pt-5 pb-0" >
             <div class="row-as mt-3">
@@ -39,24 +38,6 @@
                 <div class="col-md-12 col-sm-12 align-self-center" id="esc-arquivo">
                     <a class="but_pdf btn btn-primary" href="exports/pdfAssinado.pdf" target="_blank">Aqui está seu arquivo!</a>
                     <br><br><br><br><br>
-=======
-    <section id="assinatura" >
-        <div class="mt-5 text-center justify-content-center">
-            <h1 class="titulo">Assinatura de Arquivos</h1>
-            <?php
-                include "ProgressBarAssina.html";
-
-            ?>
-        </div>
-    </section>
-    <section>
-        <div id="container" class="d-flex text-center justify-content-center align-items-center">
-            <div id="centralizar"  >	
-                <p class="" id="frase1">Seu arquivo foi assinado com <span>sucesso!</span></p>
-                <p class="" id="frase2">Clique abaixo e faça o download do arquivo assinado.</p>
-                <div id="esc-arquivo">
-                    <a href="exports/pdfAssinado.pdf" class='btn btn-primary rounded-pill entrar_text  d-md-inline-block d-flex flex-sm-column btn_land mt-md-3 mb-md-0 mb-2' id='btn_down_assi' target="_blank">Aqui está seu arquivo!</a>
->>>>>>> 9a01a7acbea6caca316bf65815d00c6cd6bf2922
                 </div>
             </div>
         </div>

@@ -35,33 +35,14 @@
     <section>
         <div id="container" class="container text-center align-self-center" id="esc-arquivo">
             <form action="certificado-applyer.php" method="post" enctype="multipart/form-data">
-                <input type="file" class="form-control mb-3 pdf" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" accept=".p12" name="userfile">
-                <h5 class="pdf_text ms-2"> Escolha somente arquivos com extensão .p12 </h5>
+                <input type="file" class="form-control mb-3 pdf" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" accept=".pfx" name="userfile">
+                <h5 class="pdf_text ms-2"> Escolha somente arquivos com extensão .pfx </h5>
                 <!-- <input type="submit" value="Assinar Documento" name="submit" class="but_pdf btn btn-primary">  -->
                 <div class="mt-4 container text-center align-self-center" id="prox ">
                     <button class="btn " id="btn_primario" type="submit">Assinar Documento</button>
                 </div>
-<<<<<<< HEAD
-                <div class="col-md-12 col-sm-12 align-self-center" id="etapas">
-                    <?php
-                        include "ProgressBarAssina.html";
-                        ?>
-                </div>
-                <div class="col-md-12 col-sm-12 align-self-center" id="esc-arquivo">
-                    <form action="certificado-applyer.php" method="post" enctype="multipart/form-data">
-                        <input type="file" class="form-control mb-3 pdf" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" accept=".pfx" name="userfile">
-                        <h5 class="pdf_text ms-2"> Escolha somente arquivos com extensão .pfx </h5>
-                        <input type="submit" value="Assinar Documento" name="submit" class="but_pdf btn btn-primary"> 
-                        <br><br><br><br><br><br><br><br><br><br><br><br>
-                    </form>
-                </div>
             </div>
         </section>
-=======
-            </form>
-        </div>
-    </section>
->>>>>>> 9a01a7acbea6caca316bf65815d00c6cd6bf2922
         <?php   
             include "footer.html";
         ?>

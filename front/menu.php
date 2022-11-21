@@ -1,17 +1,10 @@
  <!--//HEADER-->
  <?php
-<<<<<<< HEAD
     include "conectbd.php";
     $id = $_SESSION['userid'];
     $stmt = $pdo->prepare("select * from tbusuario where userid = '$id'");	
     $stmt ->execute();
     $row = $stmt ->fetch(PDO::FETCH_BOTH);
-=======
-$id = $_SESSION['userid'];
-$stmt = $pdo->prepare("select * from tbusuario where userid = '$id'");	
-$stmt ->execute();
-$row = $stmt ->fetch(PDO::FETCH_BOTH);
->>>>>>> 9a01a7acbea6caca316bf65815d00c6cd6bf2922
  ?>
  <div id="header" class="sticky-top">
     <div class="container p-0 ">
@@ -61,7 +54,7 @@ $row = $stmt ->fetch(PDO::FETCH_BOTH);
                                 <ul class="dropdown-menu mt-2 menu-perf" onfocusout="FocusOut()">
                                     <div class="d-flex flex-row" >
                                         <div class="mt-1 ms-2" id="user">
-                                            <img src="../assets/flor.jpg " alt="" srcset="" class="usu img_prop">
+                                            <img src="../assets/Icon awesome-user-circle.png" alt="" srcset="" class="usu img_prop">
                                         </div>
                                         <div class="ms-2 me-3">          
                                             <p class="mb-0" id="text-usu">
