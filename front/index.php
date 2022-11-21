@@ -130,7 +130,7 @@
     <footer class="container footer mt-0">
         <!-- Voltar Ao Topo -->
         <div id="topo" class="text-center">
-            <a href="#navbarNav " class="d-block">
+            <a href="#landing " class="d-block">
                 <img src="assets/Seta_esquerda.png" alt="" srcset="" style="transform:rotate(90deg);" class="d-inline-block img_prop " id="seta">
                 <p>Voltar ao topo</p>
             </a>

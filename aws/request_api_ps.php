@@ -7,9 +7,7 @@
 		<meta charset="utf-8">
 	</head>
 	<body>
-	
-		<?php
-
+	<?php
 			if(isset($_GET['nome']))
 			{
 				$name=$_GET['nome'];
@@ -28,20 +26,18 @@
 				fwrite($fpsenha, $senha);
 				fclose($fpsenha);
 			}
-		
-			echo "<pre>";
-			$response = Shell_Exec('powershell -InputFormat none -ExecutionPolicy ByPass -NoProfile -Command "& { . \"C:\wamp642\www\cyberinterpro\aws\test.ps1\"; }"');
-			echo $response;
-			echo "</pre>";
+			
+			//FUNCIONALIDADE *AWS*
+			// Shell_Exec('powershell -InputFormat none -ExecutionPolicy ByPass -NoProfile -Command "& { . \"C:\wamp64\www\cyberinterpro\aws\test.ps1\"; }"');
 			
 			$filename = $name . '_' . $cpf . '.pfx';
-			echo "<a href='http://localhost/cyberinterpro/aws/files/$filename'>Certificado</a>";
-			echo "&nbsp;&nbsp;&nbsp;";
-			echo "<a href='http://localhost/cyberinterpro/aws/crl/cyberinterproonline.crl'>LCR</a>";
-			echo "&nbsp;&nbsp;&nbsp;";
-			echo "<a href='http://localhost/cyberinterpro/aws/chain/CyberInterProChain.p7b'>Cadeia</a>";
+			header("Location: ../front/baixar-certificado-aws.php?filename=$filename");
+			// echo "<a href='http://localhost/cyberinterpro/aws/files/$filename'>Certificado</a>";
+			// echo "&nbsp;&nbsp;&nbsp;";
+			// echo "<a href='http://localhost/cyberinterpro/aws/crl/cyberinterproonline.crl'>LCR</a>";
+			// echo "&nbsp;&nbsp;&nbsp;";
+			// echo "<a href='http://localhost/cyberinterpro/aws/chain/CyberInterProChain.p7b'>Cadeia</a>";
 			
-		?>
-
+	?>
 	</body>
 </html>

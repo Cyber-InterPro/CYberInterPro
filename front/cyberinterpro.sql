@@ -6,6 +6,7 @@
 -- Tempo de geração: 03-Nov-2022 às 14:25
 -- Versão do servidor: 5.7.36
 -- versão do PHP: 7.4.26
+drop database cyberinterpro;
 create database cyberinterpro;
 use cyberinterpro;
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -46,10 +47,10 @@ CREATE TABLE IF NOT EXISTS `tbcertificado` (
 --
 
 INSERT INTO `tbcertificado` (`certificadoid`, `padrao`, `nome`, `cpf`, `senha`, `data_emissao`, `data_validade`, `certificadopdf`) VALUES
-(1, 'Juridico', 'asdasd', '', '0aa1ea9a5a04b78d4581dd6d17742627', '2022-11-03', '2025-11-03', NULL),
-(17, 'Fisico', 'danilo', '2834238', 'Abc123', '2022-11-03', '2025-11-03', NULL),
-(15, 'Fisico', 'danilo', '', '61bd60c60d9fb60cc8fc7767669d40a1', '2022-11-03', '2025-11-03', NULL),
-(16, 'Fisico', 'danilo', '2834238', '61bd60c60d9fb60cc8fc7767669d40a1', '2022-11-03', '2025-11-03', NULL);
+(1, 'Fisico', 'Danilo', '12345678', '61bd60c60d9fb60cc8fc7767669d40a1', '2022-07-03', '2025-07-03', NULL),
+(2, 'Juridico', 'Cyberinterpro', '12345678', '61bd60c60d9fb60cc8fc7767669d40a1', '2022-10-13', '2025-10-13', NULL),
+(3, 'Fisico', 'Joao', '12345678', '61bd60c60d9fb60cc8fc7767669d40a1', '2022-11-21', '2025-11-21', NULL),
+(4, 'Fisico', 'Nicolly', '12345678', '61bd60c60d9fb60cc8fc7767669d40a1', '2022-11-24', '2025-11-24', NULL);
 
 -- --------------------------------------------------------
 
@@ -73,11 +74,8 @@ CREATE TABLE IF NOT EXISTS `tbusuario` (
 --
 
 INSERT INTO `tbusuario` (`userid`, `usuario`, `email`, `telefone`, `cpf`, `senha`) VALUES
-(1, 'uyhgytgty', 'hghghgh@gamil.com', '71487', '', '60131cf1fb645ce65a6c1f6f60b6e875'),
-(2, 's ugfyukgtf', 'gdjusfyugtsd@gmail.com', '65.2982', '', '38054ae419be9e8290323bf41b89739a'),
-(3, 'nic', 'nic@gmail.com', '6546735', '', 'gfeg$5jhjh'),
-(4, 'danilo', 'danilo.danilo@gmail.com', '12312312', '', 'e99a18c428cb38d5f260853678922e03'),
-(5, 'danilo', 'danilo@gmail.com', '1829', '2834238', '61bd60c60d9fb60cc8fc7767669d40a1');
+(1, 'danilo', 'danilo@gmail.com', '11963122166', '12345678', '61bd60c60d9fb60cc8fc7767669d40a1'),
+(6, 'Joao', 'joao.silva@gmail.com', '11963122165', '12345678', '61bd60c60d9fb60cc8fc7767669d40a1');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

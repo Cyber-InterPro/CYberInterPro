@@ -21,24 +21,23 @@
 <body>
     <?php
         include "menu.php";
-        ?>
-    <section id="assinatura">
-        <div class="container pt-md-0 pt-5 pb-0" >
-            <div class="row-as mt-3">
-                <div class="col-md-12 col-sm-12 align-self-center" id="titulo">
-                    <h1 class="titulo">Assinatura de Arquivos</h1>
-                </div>
-                <div class="col-md-12 col-sm-12 align-self-center" id="etapas">
-                    <?php
-                        include "ProgressBarAssina.html";
-                        ?>
-                </div>
-                <div class="col-md-12 col-sm-12 align-self-center" id="esc-arquivo">
-                    <a class="but_pdf btn btn-primary" href="exports/pdfAssinado.pdf" target="_blank">Aqui está seu arquivo!</a>
-                    <br><br><br><br><br>
-                </div>
+        $filename=$_GET['filename'];
+    ?>
+    <section class="mb-5">
+        <div class="mt-5">
+            <h1 class="titulo">Geração de Certificado</h1>
+            <?php
+                include "ProgressBarCert.html";
+
+            ?>
+        </div> 
+        <div class="container text-center">
+            <div class="col-md-12 col-sm-12 align-self-center" id="esc-arquivo">
+                <a class="but_pdf btn btn-primary" href="http://localhost/cyberinterpro/aws/files/Joao Silva Neves_12345678.pfx">Aqui está seu arquivo!</a>
+                <br><br><br><br><br>
             </div>
-        </section>
+        </div>
+    </section>
         <?php   
         include "footer.html";
         ?>

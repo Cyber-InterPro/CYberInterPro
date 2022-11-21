@@ -44,7 +44,8 @@
                     <iframe src="pdf/Array" width="100%" height="700" class="pdf_viewer">
                         </iframe>
                     </div>
-                    <a href="inserir-certificado.php">Próximo</a>
+                    <a class="but_pdf btn btn-primary" href="inserir-certificado.php">Próximo</a>
+                    <br><br><br>
                 </div>
             </div>
         </section>
